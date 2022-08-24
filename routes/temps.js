@@ -5,7 +5,7 @@ const temps = require('../services/temps');
 /* GET quotes listing. */
 router.get('/', function(req, res, next) {
   try {
-    res.json(temps.getTemperatures(req.query.page));
+    res.send(temps.getTemperatures());
   } catch(err) {
     console.error(`Error while getting temps `, err.message);
     next(err);
